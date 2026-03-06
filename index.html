@@ -1,0 +1,798 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gaia by SPL — Tozi Imóveis · Sinop/MT</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=DM+Sans:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- NAV -->
+    <nav id="nav">
+      <div class="right-side">
+        <div class="nav-logo">
+          <img
+            class="logo"
+            src="IMGs/LogoGaiaSPL.png"
+            alt="Gaia By SPL"
+            onerror="this.style.display = 'none'"
+          />
+        </div>
+
+        <p class="separador">|</p>
+
+        <div class="nav-logo-right">
+          <p class="vendidoPor">
+            <span class="NAVSVP">vendido por</span><br /><span class="NAVTI"
+              >Tozi Imóveis</span
+            >
+          </p>
+        </div>
+      </div>
+
+      <ul class="nav-links">
+        <li><a href="#sobre">O Empreendimento</a></li>
+        <li><a href="#tipologias">Plantas</a></li>
+        <li><a href="#lazer">Lazer</a></li>
+        <li><a href="#localizacao">Localização</a></li>
+      </ul>
+      <button class="nav-btn" onclick="openModal('nav')" style="cursor:pointer;">Garantir Unidade</button>
+    </nav>
+
+    <!-- HERO -->
+    <div class="hero" id="home">
+      <!-- Full-bleed background image -->
+      <div class="hero-bg-img">
+        <img
+          src="IMGs/ImovelArquivo-fd460ee5-221e-0ba6-06f1-3a1adaae61e4-FullHd.webp"
+          alt="Gaia by SPL"
+          onerror="this.style.display='none'"
+        />
+      </div>
+
+      <!-- Content: text | form -->
+      <div class="hero-inner">
+        <div class="hero-left">
+          <div class="hero-eyebrow">
+            SPL Engenharia · Sinop/MT · Lançamento 2025
+          </div>
+          <img class="logo-hero" src="IMGs/LogoGaiaSPL.png" alt="Gaia by SPL" />
+          <p class="hero-tagline">
+            O lugar onde a vida brota, as raízes se firmam e os sonhos ganham
+            forma. Na região da Av. Bruno Martini, Sinop/MT.
+          </p>
+          <a href="#sobre" class="cta-sec" style="cursor:pointer;">Conheça o projeto</a>
+        </div>
+
+        <div class="hero-right">
+          <div class="hero-form-box">
+            <span class="hero-form-label">Cadastro de interesse</span>
+            <div class="hero-form-title">Garanta sua unidade no <em>Gaia</em></div>
+            <div class="hf-group">
+              <label>Nome completo</label>
+              <input type="text" id="h-nome" placeholder="Seu nome completo" />
+            </div>
+            <div class="hf-row">
+              <div class="hf-group">
+                <label>WhatsApp</label>
+                <input type="tel" id="h-whats" placeholder="(66) 99999-9999" />
+              </div>
+              <div class="hf-group">
+                <label>E-mail</label>
+                <input type="email" id="h-email" placeholder="seu@email.com" />
+              </div>
+            </div>
+            <div class="hf-group">
+              <label>Tipo de interesse</label>
+              <select id="h-interesse">
+                <option value="" disabled selected>Selecione uma opção</option>
+                <option>Investir no Gaia</option>
+                <option>Morar no Gaia</option>
+                <option>Morar e Investir</option>
+              </select>
+            </div>
+            <button class="btn-hero-submit" onclick="submitHeroForm()">
+              Quero garantir minha unidade →
+            </button>
+            <p class="hero-form-aviso">
+              Seus dados são utilizados apenas para contato sobre o empreendimento.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-scroll">
+        <div class="hero-scroll-line"></div>
+        <span>Descubra</span>
+      </div>
+    </div>
+
+    <!-- STATS BAR -->
+    <div class="stats-bar">
+      <div class="stat-item reveal">
+        <div class="stat-num">384</div>
+        <div class="stat-label">Unidades</div>
+      </div>
+      <div class="stat-item reveal">
+        <div class="stat-num">29<sup>mil</sup></div>
+        <div class="stat-label">m² de terreno</div>
+      </div>
+      <div class="stat-item reveal">
+        <div class="stat-num">4<sup>+</sup></div>
+        <div class="stat-label">mil m² de lazer</div>
+      </div>
+      <div class="stat-item reveal">
+        <div class="stat-num">562</div>
+        <div class="stat-label">Vagas de garagem</div>
+      </div>
+    </div>
+
+    <!-- SOBRE -->
+    <section class="sobre" id="sobre">
+      <div class="sobre-img reveal-left">
+        <img
+          src="IMGs/ImovelArquivo-a5b8ec93-495c-2820-8eb6-3a1adaaef61a-FullHd.webp"
+          alt="Gaia by SPL"
+          onerror="this.style.opacity = '0'"
+        />
+        <div class="sobre-img-overlay"></div>
+        <div class="sobre-plaque">
+          <div class="sobre-plaque-num">+40</div>
+          <div class="sobre-plaque-label">Anos de história SPL</div>
+        </div>
+      </div>
+      <div class="sobre-content reveal-right">
+        <div class="s-label">O empreendimento</div>
+        <h2 class="s-title">
+          Um convite para viver em harmonia com o que te faz <em>bem</em>
+        </h2>
+        <p>
+          Gaia significa a terra — o solo fértil que sustenta, transforma e
+          inspira novos começos. Localizado ao lado de uma área de preservação
+          permanente na Av. Bruno Martini, Sinop/MT, o Gaia by SPL foi concebido
+          em sintonia com a natureza.
+        </p>
+        <p>
+          São 384 unidades distribuídas em 4 torres de 12 pavimentos, com
+          plantas de 2 e 3 quartos, opções garden no térreo e coberturas
+          exclusivas no último andar. Padrão SPL — referência em qualidade há
+          mais de 40 anos.
+        </p>
+        <div class="sobre-pills">
+          <span class="pill">2 e 3 quartos</span>
+          <span class="pill">1 suíte</span>
+          <span class="pill">Varanda gourmet</span>
+          <span class="pill">Churrasqueira à carvão</span>
+          <span class="pill">Garden disponível</span>
+          <span class="pill">Sala estendida</span>
+          <span class="pill">Portaria 24h</span>
+          <span class="pill">Lançamento 2025</span>
+        </div>
+        <button class="sec-cta" onclick="openModal('sobre')">Quero saber mais →</button>
+      </div>
+    </section>
+
+    <!-- NÚMEROS SPL -->
+    <div class="numeros-spl">
+      <div class="num-spl-item reveal">
+        <div class="num-spl-val">+40</div>
+        <div class="num-spl-lbl">Anos de história</div>
+      </div>
+      <div class="num-spl-item reveal">
+        <div class="num-spl-val">+8mil</div>
+        <div class="num-spl-lbl">Unidades entregues</div>
+      </div>
+      <div class="num-spl-item reveal">
+        <div class="num-spl-val">+35</div>
+        <div class="num-spl-lbl">Cidades atendidas</div>
+      </div>
+      <div class="num-spl-item reveal">
+        <div class="num-spl-val">+90</div>
+        <div class="num-spl-lbl">Empreendimentos entregues</div>
+      </div>
+    </div>
+
+    <!-- LOCALIZAÇÃO -->
+    <section class="localizacao" id="localizacao">
+      <div class="loc-content">
+        <div class="reveal">
+          <div class="s-label">Onde ficamos</div>
+          <h2 class="s-title">No coração da <em>Av. Bruno Martini</em></h2>
+        </div>
+        <ul class="loc-list reveal">
+          <li class="loc-item">
+            <div class="loc-icon">🏪</div>
+            <div class="loc-text">
+              <strong>Supermercados e Comércio</strong
+              ><span>Tudo no raio de caminhada</span>
+            </div>
+          </li>
+          <li class="loc-item">
+            <div class="loc-icon">⛽</div>
+            <div class="loc-text">
+              <strong>Próximo ao Posto Aeroporto</strong
+              ><span>Referência da região, ao lado do empreendimento</span>
+            </div>
+          </li>
+          <li class="loc-item">
+            <div class="loc-icon">🎓</div>
+            <div class="loc-text">
+              <strong>Escolas e Faculdades</strong
+              ><span>Instituições de ensino na vizinhança</span>
+            </div>
+          </li>
+          <li class="loc-item">
+            <div class="loc-icon">💊</div>
+            <div class="loc-text">
+              <strong>Farmácias e Clínicas</strong
+              ><span>Saúde e bem-estar por perto</span>
+            </div>
+          </li>
+          <li class="loc-item">
+            <div class="loc-icon">🌿</div>
+            <div class="loc-text">
+              <strong>Área de Preservação Permanente</strong
+              ><span>Vista verde e qualidade do ar garantidas</span>
+            </div>
+          </li>
+        </ul>
+        <button class="sec-cta" onclick="openModal('localizacao')" style="margin-top:32px;">Garantir minha unidade →</button>
+      </div>
+      <div class="loc-map">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3904.8277002392533!2d-55.53100522368644!3d-11.847331438222206!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x93a781411f5b1047%3A0x29523b9bf6d1ddd8!2sGaia%20by%20SPL!5e0!3m2!1spt-BR!2sbr!4v1772807125909!5m2!1spt-BR!2sbr"
+          allowfullscreen="true"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+        <div class="loc-map-overlay"></div>
+      </div>
+    </section>
+
+    <!-- TIPOLOGIAS -->
+    <section class="tipologias" id="tipologias">
+      <div class="tipo-header">
+        <div class="reveal">
+          <div class="s-label">Plantas</div>
+          <h2 class="s-title">Espaços pensados para <em>quem vive</em></h2>
+        </div>
+        <div class="tipo-header-right reveal">
+          <p>
+            Torres A, B e C com opções de 2 e 3 dormitórios. Torre D exclusiva
+            de 2 quartos. Todos os apartamentos com iluminação natural, varanda
+            gourmet com churrasqueira à carvão e preparação para
+            ar-condicionado.
+          </p>
+        </div>
+      </div>
+      <div class="tipo-grid reveal">
+        <div class="tipo-card">
+          <span class="tipo-tag">Torres A, B e C</span>
+          <div class="tipo-nome">3 Dormitórios</div>
+          <div class="tipo-area">69,75<small>m²</small></div>
+          <div class="tipo-detalhe">
+            Finais 1, 2, 7 e 8 · 1 suíte<br />1 ou 2 vagas · Varanda gourmet
+          </div>
+        </div>
+        <div class="tipo-card">
+          <span class="tipo-tag">Torres A, B e C</span>
+          <div class="tipo-nome">3 Dormitórios</div>
+          <div class="tipo-area">60,38<small>m²</small></div>
+          <div class="tipo-detalhe">
+            Finais 4, 5 e 6 · 1 suíte<br />1 ou 2 vagas · Sala estendida
+          </div>
+        </div>
+        <div class="tipo-card destaque">
+          <span
+            class="tipo-tag"
+            style="background: rgba(122, 92, 62, 0.12); color: var(--marrom)"
+            >Térreo exclusivo</span
+          >
+          <div class="tipo-nome">Garden</div>
+          <div class="tipo-area">86–102<small>m²</small></div>
+          <div class="tipo-detalhe">
+            Torres A, B e C · Quintal privativo<br />86,87 a 102,40 m²
+          </div>
+        </div>
+        <div class="tipo-card">
+          <span class="tipo-tag">Torre D</span>
+          <div class="tipo-nome">2 Dormitórios</div>
+          <div class="tipo-area">50,59<small>m²</small></div>
+          <div class="tipo-detalhe">
+            Finais 1, 2, 7 e 8 · 1 suíte<br />1 ou 2 vagas · Varanda gourmet
+          </div>
+        </div>
+        <div class="tipo-card">
+          <span class="tipo-tag">Torre D</span>
+          <div class="tipo-nome">2 Dormitórios</div>
+          <div class="tipo-area">54,46<small>m²</small></div>
+          <div class="tipo-detalhe">
+            Finais 3, 4, 5 e 6 · 1 suíte<br />1 ou 2 vagas
+          </div>
+        </div>
+        <div class="tipo-card destaque">
+          <span
+            class="tipo-tag"
+            style="background: rgba(122, 92, 62, 0.12); color: var(--marrom)"
+            >Térreo exclusivo</span
+          >
+          <div class="tipo-nome">Garden D</div>
+          <div class="tipo-area">66–87<small>m²</small></div>
+          <div class="tipo-detalhe">
+            Torre D · Quintal privativo<br />66,11 a 87,55 m²
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:48px;text-align:center;">
+        <button class="sec-cta" onclick="openModal('tipologias')">Quero conhecer as plantas →</button>
+      </div>
+    </section>
+
+    <!-- DIFERENCIAIS -->
+    <section class="diferenciais" id="diferenciais">
+      <div class="dif-header">
+        <div class="reveal">
+          <div class="s-label" style="color: var(--dourado)">
+            Por que o Gaia
+          </div>
+          <h2 class="s-title">
+            Cada detalhe pensado para <em>elevar</em> sua vida
+          </h2>
+        </div>
+        <div class="reveal">
+          <p>
+            O Gaia by SPL nasce com o maior potencial de valorização da cidade.
+            Nos últimos dois anos os lançamentos SPL em Sinop registraram
+            valorização acima de 40% em um ano — o Acqua by SPL vendeu mais de
+            60% das unidades em menos de um mês.
+          </p>
+        </div>
+      </div>
+      <div class="dif-lista reveal">
+        <div class="dif-item">
+          <div class="dif-ico">🌿</div>
+          <div class="dif-titulo">Ao lado da Área de Preservação</div>
+          <div class="dif-desc">
+            Localizado junto a uma APP, com paisagismo diferenciado e mais de
+            40% de área permeável nas áreas comuns.
+          </div>
+        </div>
+        <div class="dif-item">
+          <div class="dif-ico">📍</div>
+          <div class="dif-titulo">Localização Central</div>
+          <div class="dif-desc">
+            Região da Av. Bruno Martini, próximo ao Posto Aeroporto,
+            supermercados, escolas, farmácias e academias de Sinop.
+          </div>
+        </div>
+        <div class="dif-item">
+          <div class="dif-ico">🏊</div>
+          <div class="dif-titulo">Complexo Aquático Completo</div>
+          <div class="dif-desc">
+            3 piscinas aquecidas: adulto coberta climatizada, piscina com raia e
+            infantil com aquashow e deck molhado.
+          </div>
+        </div>
+        <div class="dif-item">
+          <div class="dif-ico">🏋️</div>
+          <div class="dif-titulo">Academia e Festas Climatizadas</div>
+          <div class="dif-desc">
+            Academia e salão de festas entregues climatizados, com previsão de
+            Wi-Fi. Espaço funcional diferenciado.
+          </div>
+        </div>
+        <div class="dif-item">
+          <div class="dif-ico">🏠</div>
+          <div class="dif-titulo">Acabamento Alto Padrão</div>
+          <div class="dif-desc">
+            Porcelanato em todos os ambientes, granito nas bancadas,
+            churrasqueira à carvão em todas as unidades e varanda com acesso
+            duplo.
+          </div>
+        </div>
+        <div class="dif-item">
+          <div class="dif-ico">📈</div>
+          <div class="dif-titulo">Maior Potencial de Valorização</div>
+          <div class="dif-desc">
+            Sinop cresce com o agronegócio. O Gaia nasce na região mais
+            estratégica — com 5% de entrada para os primeiros compradores.
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:48px;text-align:center;">
+        <button class="sec-cta sec-cta-inv" onclick="openModal('diferenciais')">Quero garantir minha unidade →</button>
+      </div>
+    </section>
+
+    <!-- LAZER -->
+    <section class="lazer" id="lazer">
+      <div class="lazer-header">
+        <div class="reveal">
+          <div class="s-label">Lazer de Resort</div>
+          <h2 class="s-title">+40 itens de <em>lazer</em></h2>
+        </div>
+        <div class="reveal">
+          <p
+            style="
+              font-size: 14px;
+              color: #777;
+              line-height: 1.9;
+              font-weight: 500;
+            "
+          >
+            Mais de 4 mil m² de área de lazer central, integrado às 4 torres.
+            Cada espaço pensado para <br />
+            reunir gerações e criar momentos inesquecíveis dentro do seu
+            condomínio.
+          </p>
+        </div>
+      </div>
+      <div class="lazer-grid reveal">
+        <div class="lz-item">
+          <span class="lz-ico">🧖</span
+          ><span class="lz-nome">SPA com Hidromassagem</span>
+        </div>
+        <div class="lz-item">
+          <span class="lz-ico">🎪</span
+          ><span class="lz-nome">Rooftop Festas</span>
+        </div>
+        <div class="lz-item">
+          <span class="lz-ico">🌿</span><span class="lz-nome">Espaço Zen</span>
+        </div>
+        <div class="lz-item">
+          <span class="lz-ico">🏡</span
+          ><span class="lz-nome">Casa de Campo</span>
+        </div>
+        <div class="lz-item">
+          <span class="lz-ico">🐾</span><span class="lz-nome">Pet Place</span>
+        </div>
+        <div class="lz-item">
+          <span class="lz-ico">🍷</span><span class="lz-nome">Wine Bar</span>
+        </div>
+        <div class="lz-item">
+          <span class="lz-ico">🎮</span
+          ><span class="lz-nome">Salão de Jogos</span>
+        </div>
+        <div class="lz-item">
+          <span class="lz-ico">🚴</span
+          ><span class="lz-nome">Bicicletário e Oficina</span>
+        </div>
+        <div class="lz-item">
+          <span class="lz-ico">🏐</span
+          ><span class="lz-nome">Quadra Poliesportiva</span>
+        </div>
+        <div class="lz-item">
+          <span class="lz-ico">🛝</span><span class="lz-nome">Playground</span>
+        </div>
+        <div class="lz-item">
+          <span class="lz-ico">🎠</span
+          ><span class="lz-nome">Brinquedoteca</span>
+        </div>
+        <div class="lz-item">
+          <span class="lz-ico">🔥</span
+          ><span class="lz-nome">Fogo de Chão</span>
+        </div>
+        <div class="lz-item">
+          <span class="lz-ico">🧺</span
+          ><span class="lz-nome">Espaço Piquenique</span>
+        </div>
+        <div class="lz-item">
+          <span class="lz-ico">🌳</span
+          ><span class="lz-nome">Bosque Privativo</span>
+        </div>
+        <div class="lz-item">
+          <span class="lz-ico">☀️</span><span class="lz-nome">Solarium</span>
+        </div>
+        <div class="lz-item">
+          <span class="lz-ico">🏖️</span
+          ><span class="lz-nome">Quadra de Areia</span>
+        </div>
+        <div class="lz-item">
+          <span class="lz-ico">🎒</span
+          ><span class="lz-nome">Espaço Delivery</span>
+        </div>
+        <div class="lz-item">
+          <span class="lz-ico">⚡</span
+          ><span class="lz-nome">Vaga Carro Elétrico</span>
+        </div>
+      </div>
+      <div class="lazer-highlights reveal">
+        <div class="lz-hl">
+          <span class="lz-hl-ico">🏊</span>
+          <div class="lz-hl-text">
+            <strong>3 Piscinas Aquecidas</strong>
+            <span>Adulto coberta + Raia + Infantil com aquashow</span>
+          </div>
+        </div>
+        <div class="lz-hl">
+          <span class="lz-hl-ico">🎪</span>
+          <div class="lz-hl-text">
+            <strong>Salão de Festas + Rooftop</strong>
+            <span>Ambos climatizados e com Wi-Fi</span>
+          </div>
+        </div>
+        <div class="lz-hl">
+          <span class="lz-hl-ico">🏡</span>
+          <div class="lz-hl-text">
+            <strong>Casa de Campo com Piscina</strong>
+            <span>Espaço exclusivo de uso coletivo</span>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:48px;text-align:center;">
+        <button class="sec-cta" onclick="openModal('lazer')" style="background:var(--verde-escuro);">Quero saber mais sobre o lazer →</button>
+      </div>
+    </section>
+
+    <!-- TORRES -->
+    <section class="torres" id="torres">
+      <div class="reveal">
+        <div class="s-label">Estrutura</div>
+        <h2 class="s-title">
+          4 Torres · 12 Pavimentos · <em>384 Unidades</em>
+        </h2>
+      </div>
+      <div class="torres-grid reveal">
+        <div class="torre">
+          <span class="torre-tag">Torre</span>
+          <div class="torre-nome">A</div>
+          <div class="torre-info">
+            <div class="torre-row">
+              <span>Tipologia</span><span>2 e 3 quartos</span>
+            </div>
+            <div class="torre-row"><span>Pavimentos</span><span>12</span></div>
+            <div class="torre-row">
+              <span>Coberturas</span><span>9 un. — 12º andar</span>
+            </div>
+            <div class="torre-row">
+              <span>Garden</span><span>Sim, térreo</span>
+            </div>
+          </div>
+          <div class="torre-letra">A</div>
+        </div>
+        <div class="torre">
+          <span class="torre-tag">Torre</span>
+          <div class="torre-nome">B</div>
+          <div class="torre-info">
+            <div class="torre-row">
+              <span>Tipologia</span><span>2 e 3 quartos</span>
+            </div>
+            <div class="torre-row"><span>Pavimentos</span><span>12</span></div>
+            <div class="torre-row">
+              <span>Coberturas</span><span>9 un. — 12º andar</span>
+            </div>
+            <div class="torre-row">
+              <span>Garden</span><span>Sim, térreo</span>
+            </div>
+          </div>
+          <div class="torre-letra">B</div>
+        </div>
+        <div class="torre">
+          <span class="torre-tag">Torre</span>
+          <div class="torre-nome">C</div>
+          <div class="torre-info">
+            <div class="torre-row">
+              <span>Tipologia</span><span>2 e 3 quartos</span>
+            </div>
+            <div class="torre-row"><span>Pavimentos</span><span>12</span></div>
+            <div class="torre-row">
+              <span>Coberturas</span><span>9 un. — 12º andar</span>
+            </div>
+            <div class="torre-row">
+              <span>Garden</span><span>Sim, térreo</span>
+            </div>
+          </div>
+          <div class="torre-letra">C</div>
+        </div>
+        <div class="torre">
+          <span class="torre-tag">Torre</span>
+          <div class="torre-nome" style="color: var(--dourado)">D</div>
+          <div class="torre-info">
+            <div class="torre-row">
+              <span>Tipologia</span><span>2 quartos</span>
+            </div>
+            <div class="torre-row"><span>Pavimentos</span><span>12</span></div>
+            <div class="torre-row">
+              <span>Coberturas</span><span>3 un. — 12º andar</span>
+            </div>
+            <div class="torre-row">
+              <span>Garden</span><span>Sim, térreo</span>
+            </div>
+          </div>
+          <div class="torre-letra" style="color: rgba(184, 146, 42, 0.08)">
+            D
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:48px;text-align:center;">
+        <button class="sec-cta" onclick="openModal('torres')">Quero garantir minha unidade →</button>
+      </div>
+    </section>
+
+    <!-- VAGAS -->
+    <div class="vagas">
+      <div class="vaga-item reveal">
+        <div class="vaga-num">541</div>
+        <div class="vaga-lbl">Vagas Comuns</div>
+      </div>
+      <div class="vaga-item reveal">
+        <div class="vaga-num">12</div>
+        <div class="vaga-lbl">Vagas PcD</div>
+      </div>
+      <div class="vaga-item reveal">
+        <div class="vaga-num">8</div>
+        <div class="vaga-lbl">Vagas Idoso</div>
+      </div>
+      <div class="vaga-item reveal">
+        <div class="vaga-num">562</div>
+        <div class="vaga-lbl">Total de Vagas</div>
+      </div>
+    </div>
+
+    <!-- CTA STRIP -->
+    <div class="cta-strip">
+      <h2>Condições <em>exclusivas</em><br />só com a Tozi!</h2>
+      <p>
+        Sinal de 5% e entrada parcelada · Parcelas a partir de R$ 2.500 +
+        Reforços
+      </p>
+      <button class="cta-main" onclick="openModal('strip')" style="cursor:pointer;">Quero garantir minha unidade →</button>
+    </div>
+
+    <!-- FORMULÁRIO -->
+    <section class="formulario" id="formulario">
+      <div class="form-esq">
+        <div class="s-label" style="color: var(--dourado)">Fale conosco</div>
+        <h2 class="s-title">Agende sua visita ao <em>decorado</em></h2>
+        <div class="form-esq-body">
+          <div class="form-contact-row">
+            <div class="form-contact-icon">📍</div>
+            <div class="form-contact-info">
+              <strong>Av. das Figueiras, 1646 - 01</strong>
+              <span>Centro, Sinop - MT · CEP 78550-150</span>
+            </div>
+          </div>
+          <div class="form-contact-row">
+            <div class="form-contact-icon">📞</div>
+            <div class="form-contact-info">
+              <strong>(66) 3531-7222</strong>
+              <span>Segunda a Sábado · 8h às 18h</span>
+            </div>
+          </div>
+          <div class="form-contact-row">
+            <div class="form-contact-icon">🌐</div>
+            <div class="form-contact-info">
+              <strong>toziimoveis.com.br</strong>
+              <span>Tozi Imóveis — Referência em Sinop/MT</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-dir">
+        <div class="s-label">Cadastro de interesse</div>
+        <div class="f-group">
+          <label>Nome completo</label>
+          <input type="text" id="f-nome" placeholder="Seu nome" />
+        </div>
+        <div class="form-grid">
+          <div class="f-group">
+            <label>WhatsApp</label>
+            <input type="tel" id="f-whats" placeholder="(66) 99999-9999" />
+          </div>
+          <div class="f-group">
+            <label>E-mail</label>
+            <input type="email" id="f-email" placeholder="seu@email.com" />
+          </div>
+        </div>
+        <div class="f-group">
+          <label>Tipo de interesse</label>
+          <select id="f-interesse">
+            <option value="" disabled selected>Selecione uma opção</option>
+            <option>Investir no Gaia</option>
+            <option>Morar no Gaia</option>
+            <option>Morar e Investir</option>
+          </select>
+        </div>
+        <button class="btn-submit" onclick="submitMainForm()">
+          Enviar cadastro →
+        </button>
+        <p class="form-aviso">
+          Ao enviar, você concorda com a Política de Privacidade da Tozi
+          Imóveis. Seus dados são utilizados apenas para contato sobre o
+          empreendimento.
+        </p>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-brand">
+        <div class="footer-brand-name">Gaia <span>by SPL</span></div>
+        <div class="footer-brand-sub">Tozi Imóveis · Sinop, Mato Grosso</div>
+        <p>
+          Gaia significa a terra — o solo fértil que sustenta, transforma e
+          inspira novos começos. Um lançamento SPL Engenharia, referência em
+          qualidade há mais de 40 anos, com mais de 8 mil unidades entregues em
+          mais de 35 cidades.
+        </p>
+      </div>
+      <div class="footer-col">
+        <h5>Navegação</h5>
+        <a href="#sobre">O Empreendimento</a>
+        <a href="#tipologias">Plantas e Tipologias</a>
+        <a href="#lazer">Áreas de Lazer</a>
+        <a href="#torres">As Torres</a>
+        <a href="#localizacao">Localização</a>
+        <a href="#formulario">Contato</a>
+      </div>
+      <div class="footer-col">
+        <h5>Tozi Imóveis</h5>
+        <p>Av. das Figueiras, 1646 - 01</p>
+        <p>Centro, Sinop - MT</p>
+        <p>CEP 78550-150</p>
+        <a href="tel:6635317222">(66) 3531-7222</a>
+        <a href="https://toziimoveis.com.br" target="_blank"
+          >toziimoveis.com.br</a
+        >
+      </div>
+      <div class="footer-bottom">
+        <p>
+          © 2025 Gaia by SPL — Vendido por Tozi Imóveis. Todos os direitos
+          reservados.
+        </p>
+        <p>
+          <a href="pages/privacidade.html" style="color:rgba(232,221,204,0.4);text-decoration:none;">Política de Privacidade</a>
+          &nbsp;·&nbsp;
+          <a href="pages/sobre.html" style="color:rgba(232,221,204,0.4);text-decoration:none;">Sobre a Tozi</a>
+        </p>
+        <p>Imagens ilustrativas. Consulte memorial descritivo. CRECI/MT.</p>
+      </div>
+    </footer>
+
+
+    <!-- TOAST -->
+    <div id="toast">Cadastro realizado! Entraremos em contato em breve.</div>
+
+    <!-- MODAL POPUP FORM -->
+    <div class="modal-overlay" id="modal-overlay" onclick="closeModalOutside(event)">
+      <div class="modal-box">
+        <button class="modal-close" onclick="closeModal()">✕</button>
+        <span class="modal-label">Cadastro de interesse</span>
+        <div class="modal-title">Garanta sua unidade no <em>Gaia</em></div>
+        <div class="mf-group">
+          <label>Nome completo</label>
+          <input type="text" id="m-nome" placeholder="Seu nome completo" />
+        </div>
+        <div class="mf-row">
+          <div class="mf-group">
+            <label>WhatsApp</label>
+            <input type="tel" id="m-whats" placeholder="(66) 99999-9999" />
+          </div>
+          <div class="mf-group">
+            <label>E-mail</label>
+            <input type="email" id="m-email" placeholder="seu@email.com" />
+          </div>
+        </div>
+        <div class="mf-group">
+          <label>Tipo de interesse</label>
+          <select id="m-interesse">
+            <option value="" disabled selected>Selecione uma opção</option>
+            <option>Investir no Gaia</option>
+            <option>Morar no Gaia</option>
+            <option>Morar e Investir</option>
+          </select>
+        </div>
+        <button class="btn-modal-submit" onclick="submitModalForm()">Enviar cadastro →</button>
+        <p class="modal-aviso">Seus dados são utilizados apenas para contato sobre o empreendimento.</p>
+      </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/cookies.js"></script>
+
+  </body>
+</html>

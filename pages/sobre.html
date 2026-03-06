@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sobre a Tozi Imóveis — Gaia by SPL</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <style>
+      /* Estilos específicos da página Sobre */
+      .page-hero {
+        background: var(--verde-escuro);
+        padding: 160px 10vw 100px;
+        position: relative;
+        overflow: hidden;
+      }
+      .page-hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(ellipse at 70% 50%, rgba(46,107,79,0.25) 0%, transparent 70%);
+      }
+      .page-hero-label {
+        font-size: 10px;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        color: var(--dourado);
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 24px;
+      }
+      .page-hero-label::before {
+        content: "";
+        width: 40px;
+        height: 1px;
+        background: var(--dourado);
+      }
+      .page-hero h1 {
+        font-family: "Playfair Display", serif;
+        font-size: clamp(42px, 6vw, 80px);
+        font-weight: 700;
+        color: var(--areia-clara);
+        line-height: 1.05;
+        max-width: 700px;
+        position: relative;
+      }
+      .page-hero h1 em {
+        font-style: italic;
+        color: var(--verde-claro);
+      }
+      .page-hero p {
+        font-size: 16px;
+        font-weight: 300;
+        color: rgba(232,221,204,0.65);
+        max-width: 560px;
+        line-height: 1.9;
+        margin-top: 24px;
+        position: relative;
+      }
+
+      .sobre-page {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 100px 8vw;
+      }
+      .sobre-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 80px;
+        align-items: start;
+        margin-bottom: 80px;
+      }
+      .sobre-grid h2 {
+        font-family: "Playfair Display", serif;
+        font-size: clamp(28px, 3vw, 44px);
+        font-weight: 700;
+        color: var(--verde-escuro);
+        line-height: 1.1;
+        margin-bottom: 24px;
+      }
+      .sobre-grid h2 em {
+        font-style: italic;
+        color: var(--verde-medio);
+      }
+      .sobre-grid p {
+        font-size: 15px;
+        font-weight: 300;
+        color: #555;
+        line-height: 1.9;
+        margin-bottom: 16px;
+      }
+      .sobre-nums {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2px;
+        background: rgba(27,58,45,0.08);
+        margin-bottom: 80px;
+      }
+      .sobre-num-item {
+        background: var(--off-white);
+        padding: 48px 36px;
+        text-align: center;
+      }
+      .sobre-num-val {
+        font-family: "Playfair Display", serif;
+        font-size: 56px;
+        font-weight: 400;
+        color: var(--dourado);
+        line-height: 1;
+        margin-bottom: 10px;
+      }
+      .sobre-num-lbl {
+        font-size: 11px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: #999;
+      }
+      .sobre-values {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+        margin-bottom: 80px;
+      }
+      .value-card {
+        border: 1px solid rgba(27,58,45,0.1);
+        padding: 36px 28px;
+        border-radius: 2px;
+        transition: all 0.3s;
+      }
+      .value-card:hover {
+        border-color: var(--verde-medio);
+        transform: translateY(-4px);
+        box-shadow: 0 12px 32px rgba(27,58,45,0.08);
+      }
+      .value-ico { font-size: 32px; margin-bottom: 16px; display: block; }
+      .value-title {
+        font-family: "Playfair Display", serif;
+        font-size: 18px;
+        font-weight: 700;
+        color: var(--verde-escuro);
+        margin-bottom: 10px;
+      }
+      .value-desc { font-size: 13px; color: #777; line-height: 1.7; font-weight: 300; }
+
+      .sobre-cta-box {
+        background: var(--verde-escuro);
+        padding: 60px;
+        text-align: center;
+        border-radius: 4px;
+      }
+      .sobre-cta-box h3 {
+        font-family: "Playfair Display", serif;
+        font-size: clamp(24px, 3vw, 40px);
+        font-weight: 700;
+        color: var(--areia-clara);
+        margin-bottom: 12px;
+      }
+      .sobre-cta-box h3 em { font-style: italic; color: var(--verde-claro); }
+      .sobre-cta-box p {
+        font-size: 14px;
+        color: rgba(232,221,204,0.55);
+        margin-bottom: 32px;
+        font-weight: 300;
+      }
+
+      .page-footer-nav {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 12px;
+        color: rgba(232,221,204,0.4);
+        margin-bottom: 32px;
+      }
+      .page-footer-nav a { color: var(--dourado); text-decoration: none; }
+
+      @media (max-width: 768px) {
+        .sobre-grid { grid-template-columns: 1fr; gap: 40px; }
+        .sobre-nums { grid-template-columns: 1fr; }
+        .sobre-values { grid-template-columns: 1fr; }
+        .sobre-page { padding: 60px 6vw; }
+        .page-hero { padding: 130px 6vw 70px; }
+        .sobre-cta-box { padding: 40px 24px; }
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- NAV -->
+    <nav id="nav" style="background: rgba(27,58,45,0.97); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(184,146,42,0.3);">
+      <div class="right-side">
+        <div class="nav-logo">
+          <img class="logo" src="../IMGs/LogoGaiaSPL.png" alt="Gaia By SPL" onerror="this.style.display='none'" />
+        </div>
+        <p class="separador">|</p>
+        <div class="nav-logo-right">
+          <p class="vendidoPor">
+            <span class="NAVSVP">vendido por</span><br />
+            <span class="NAVTI">Tozi Imóveis</span>
+          </p>
+        </div>
+      </div>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../index.html#sobre">O Empreendimento</a></li>
+        <li><a href="../index.html#tipologias">Plantas</a></li>
+        <li><a href="../index.html#localizacao">Localização</a></li>
+      </ul>
+      <a href="../index.html#formulario" class="nav-btn" style="cursor:pointer;">Garantir Unidade</a>
+    </nav>
+
+    <!-- HERO -->
+    <div class="page-hero">
+      <div class="page-hero-label">Quem somos</div>
+      <h1>Tozi Imóveis —<br /><em>conectando pessoas</em><br />ao lugar certo</h1>
+      <p>Referência no mercado imobiliário de Sinop/MT, a Tozi Imóveis atua com foco em atendimento personalizado e soluções inteligentes para quem quer investir ou morar com qualidade de vida.</p>
+    </div>
+
+    <!-- CONTEÚDO -->
+    <div class="sobre-page">
+
+      <!-- Breadcrumb -->
+      <div class="page-footer-nav" style="margin-bottom:60px;">
+        <a href="../index.html">Home</a> <span>›</span> <span style="color:rgba(27,58,45,0.5)">Sobre</span>
+      </div>
+
+      <!-- Texto principal -->
+      <div class="sobre-grid reveal">
+        <div>
+          <h2>Uma empresa com <em>propósito</em></h2>
+          <p>Fundada em Sinop, a Tozi Imóveis nasceu com a missão de simplificar o processo de compra, venda e locação de imóveis na região. Nosso time é formado por corretores apaixonados pelo que fazem e comprometidos com a realização do sonho de cada cliente.</p>
+          <p>Trabalhamos com os melhores empreendimentos do mercado, como o Gaia by SPL — um lançamento que reúne localização estratégica, lazer de alto padrão e condições exclusivas de pagamento.</p>
+        </div>
+        <div>
+          <h2>Nossa <em>missão</em></h2>
+          <p>Oferecer a melhor experiência imobiliária de Sinop/MT, com transparência, agilidade e um atendimento que vai além da venda — construindo relações duradouras com nossos clientes.</p>
+          <p>Acreditamos que comprar um imóvel é uma das decisões mais importantes da vida. Por isso, estamos ao lado do cliente em cada etapa: da escolha ao contrato, da documentação à entrega das chaves.</p>
+        </div>
+      </div>
+
+      <!-- Números -->
+      <div class="sobre-nums reveal">
+        <div class="sobre-num-item">
+          <div class="sobre-num-val">+500</div>
+          <div class="sobre-num-lbl">Clientes atendidos</div>
+        </div>
+        <div class="sobre-num-item">
+          <div class="sobre-num-val">+10</div>
+          <div class="sobre-num-lbl">Anos de mercado</div>
+        </div>
+        <div class="sobre-num-item">
+          <div class="sobre-num-val">100%</div>
+          <div class="sobre-num-lbl">Foco no cliente</div>
+        </div>
+      </div>
+
+      <!-- Valores -->
+      <div class="sobre-values reveal">
+        <div class="value-card">
+          <span class="value-ico">🤝</span>
+          <div class="value-title">Transparência</div>
+          <div class="value-desc">Informações claras em todas as etapas. Sem letras miúdas, sem surpresas.</div>
+        </div>
+        <div class="value-card">
+          <span class="value-ico">🎯</span>
+          <div class="value-title">Resultado</div>
+          <div class="value-desc">Focamos em encontrar a solução certa para cada cliente, não apenas fechar negócios.</div>
+        </div>
+        <div class="value-card">
+          <span class="value-ico">🌱</span>
+          <div class="value-title">Compromisso</div>
+          <div class="value-desc">Estamos presentes do primeiro contato até muito depois da assinatura do contrato.</div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="sobre-cta-box reveal">
+        <h3>Pronto para conhecer o <em>Gaia</em>?</h3>
+        <p>Agende uma visita ao decorado e descubra por que o Gaia by SPL é o lançamento mais esperado de Sinop.</p>
+        <a href="../index.html#formulario" class="cta-main" style="cursor:pointer; display:inline-block; text-decoration:none;">Quero agendar uma visita →</a>
+      </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-brand">
+        <div class="footer-brand-name">Gaia <span>by SPL</span></div>
+        <div class="footer-brand-sub">Tozi Imóveis · Sinop, Mato Grosso</div>
+        <p>Gaia significa a terra — o solo fértil que sustenta, transforma e inspira novos começos.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Navegação</h5>
+        <a href="../index.html">Home</a>
+        <a href="../index.html#sobre">O Empreendimento</a>
+        <a href="../index.html#tipologias">Plantas</a>
+        <a href="../index.html#localizacao">Localização</a>
+        <a href="../index.html#formulario">Contato</a>
+      </div>
+      <div class="footer-col">
+        <h5>Tozi Imóveis</h5>
+        <p>Av. das Figueiras, 1646 - 01</p>
+        <p>Centro, Sinop - MT · CEP 78550-150</p>
+        <a href="tel:6635317222">(66) 3531-7222</a>
+        <a href="https://toziimoveis.com.br" target="_blank">toziimoveis.com.br</a>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Gaia by SPL — Vendido por Tozi Imóveis. Todos os direitos reservados.</p>
+        <p>
+          <a href="privacidade.html" style="color:rgba(232,221,204,0.4); text-decoration:none;">Política de Privacidade</a>
+          &nbsp;·&nbsp;
+          <a href="sobre.html" style="color:rgba(232,221,204,0.4); text-decoration:none;">Sobre a Tozi</a>
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      // Reveal on scroll
+      const allReveal = document.querySelectorAll(".reveal");
+      const obs = new IntersectionObserver(
+        (entries) => { entries.forEach((e,i) => { if(e.isIntersecting){ setTimeout(()=>e.target.classList.add("in"),(i%4)*100); obs.unobserve(e.target); } }); },
+        { threshold: 0.1, rootMargin: "0px 0px -50px 0px" }
+      );
+      allReveal.forEach(el => obs.observe(el));
+    </script>
+  </body>
+</html>
