@@ -15,6 +15,23 @@
 
       gtag("config", "G-MHRFL8EZKG");
     </script>
+    <!-- Event snippet for Gaia - Envio de Forms conversion page
+In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+    <script>
+      function gtag_report_conversion(url) {
+        var callback = function () {
+          if (typeof url != "undefined") {
+            window.location = url;
+          }
+        };
+        gtag("event", "conversion", {
+          send_to: "AW-797364149/C-g4CMuJvYUcELWfm_wC",
+          event_callback: callback,
+        });
+        return false;
+      }
+    </script>
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gaia by SPL — Tozi Imóveis · Sinop/MT</title>
@@ -119,7 +136,13 @@
                 <option>Morar e Investir</option>
               </select>
             </div>
-            <button class="btn-hero-submit" onclick="submitHeroForm()">
+            <button
+              class="btn-hero-submit"
+              onclick="
+                gtag_report_conversion('https://gaia.toziimoveis.com.br/');
+                submitHeroForm();
+              "
+            >
               Quero garantir minha unidade →
             </button>
             <p class="hero-form-aviso">
@@ -748,7 +771,13 @@
             <option>Morar e Investir</option>
           </select>
         </div>
-        <button class="btn-submit" onclick="submitMainForm()">
+        <button
+          class="btn-submit"
+          onclick="
+            gtag_report_conversion('https://gaia.toziimoveis.com.br/');
+            submitMainForm();
+          "
+        >
           Enviar cadastro →
         </button>
         <p class="form-aviso">
@@ -848,7 +877,13 @@
             <option>Morar e Investir</option>
           </select>
         </div>
-        <button class="btn-modal-submit" onclick="submitModalForm()">
+        <button
+          class="btn-modal-submit"
+          onclick="
+            gtag_report_conversion('https://gaia.toziimoveis.com.br/');
+            submitModalForm();
+          "
+        >
           Enviar cadastro →
         </button>
         <p class="modal-aviso">
