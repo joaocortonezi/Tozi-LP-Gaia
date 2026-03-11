@@ -69,33 +69,29 @@ async function enviar(prefix, origem, btn) {
   btn.dataset.label = btn.textContent;
   setLoading(btn, true);
 
-  try {
-    // FormData com no-cors não dispara preflight — compatível com Apps Script
-    const formData = new FormData();
-    formData.append('nome',      fields.nome);
-    formData.append('whatsapp',  fields.whatsapp);
-    formData.append('email',     fields.email);
-    formData.append('interesse', fields.interesse);
-    formData.append('origem',    origem);
+  const formData = new FormData();
+  formData.append('nome',      fields.nome);
+  formData.append('whatsapp',  fields.whatsapp);
+  formData.append('email',     fields.email);
+  formData.append('interesse', fields.interesse);
+  formData.append('origem',    origem);
 
-    await fetch(SHEET_URL, {
-      method: 'POST',
-      mode: 'no-cors',
-      body: formData,
-    });
+  // no-cors sempre retorna resposta opaca — não tenta ler o resultado
+  fetch(SHEET_URL, {
+    method: 'POST',
+    mode: 'no-cors',
+    body: formData,
+  });
 
-    if (origem === 'Modal') closeModal();
-    ['nome','whats','email','interesse'].forEach(f => {
-      const el = document.getElementById(prefix + '-' + f);
-      if (el) el.value = '';
-    });
-    showSuccess();
-  } catch (err) {
-    console.error('Erro ao enviar:', err);
-    alert("Erro ao enviar. Tente novamente ou entre em contato pelo WhatsApp.");
-  } finally {
-    setLoading(btn, false);
-  }
+  // Limpa campos e mostra sucesso imediatamente
+  ['nome','whats','email','interesse'].forEach(f => {
+    const el = document.getElementById(prefix + '-' + f);
+    if (el) el.value = '';
+  });
+
+  if (origem === 'Modal') closeModal();
+  showSuccess();
+  setLoading(btn, false);
 }
 
 function showSuccess() {
