@@ -38,7 +38,7 @@ function closeModalOutside(e) {
 document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
 
 // ── FORMS ──────────────────────────────────────
-const SHEET_URL = 'https://script.google.com/macros/s/AKfycbwjpIuPEB66wTheRQ8R_lA-lY6X8-myRI1lY-GZw_LlF0gUDTPrY-ws0mEJXVG_2WLC/exec';
+const SHEET_URL = 'https://script.google.com/macros/s/AKfycbz0TnVXepwSC9CRJJzjA7ZFVfDrhLgh2t721TrN_4DlcEoTyNiqtlWjx5zXMPQo1J8/exec';
 
 function getFields(prefix) {
   return {
@@ -70,21 +70,28 @@ async function enviar(prefix, origem, btn) {
   setLoading(btn, true);
 
   try {
+    // FormData com no-cors não dispara preflight — compatível com Apps Script
+    const formData = new FormData();
+    formData.append('nome',      fields.nome);
+    formData.append('whatsapp',  fields.whatsapp);
+    formData.append('email',     fields.email);
+    formData.append('interesse', fields.interesse);
+    formData.append('origem',    origem);
+
     await fetch(SHEET_URL, {
       method: 'POST',
       mode: 'no-cors',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ ...fields, origem }),
+      body: formData,
     });
-    // no-cors means we can't read the response, but if no error was thrown it worked
-    if (origem === 'modal') closeModal();
-    // Clear fields
+
+    if (origem === 'Modal') closeModal();
     ['nome','whats','email','interesse'].forEach(f => {
       const el = document.getElementById(prefix + '-' + f);
-      if (el) el.value = f === 'interesse' ? '' : '';
+      if (el) el.value = '';
     });
     showSuccess();
   } catch (err) {
+    console.error('Erro ao enviar:', err);
     alert("Erro ao enviar. Tente novamente ou entre em contato pelo WhatsApp.");
   } finally {
     setLoading(btn, false);
