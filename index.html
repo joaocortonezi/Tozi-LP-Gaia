@@ -1,37 +1,6 @@
 <!doctype html>
 <html lang="pt-BR">
   <head>
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-MHRFL8EZKG"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-
-      gtag("config", "G-MHRFL8EZKG");
-    </script>
-    <!-- Event snippet for Gaia - Envio de Forms conversion page
-In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
-    <script>
-      function gtag_report_conversion(url) {
-        var callback = function () {
-          if (typeof url != "undefined") {
-            window.location = url;
-          }
-        };
-        gtag("event", "conversion", {
-          send_to: "AW-797364149/C-g4CMuJvYUcELWfm_wC",
-          event_callback: callback,
-        });
-        return false;
-      }
-    </script>
-
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gaia by SPL — Tozi Imóveis · Sinop/MT</title>
@@ -71,13 +40,7 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
         <li><a href="#lazer">Lazer</a></li>
         <li><a href="#localizacao">Localização</a></li>
       </ul>
-      <button
-        class="nav-btn"
-        onclick="openModal('nav')"
-        style="cursor: pointer"
-      >
-        Garantir Unidade
-      </button>
+      <button class="nav-btn" onclick="openModal('nav')" style="cursor:pointer;">Garantir Unidade</button>
     </nav>
 
     <!-- HERO -->
@@ -87,7 +50,7 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
         <img
           src="IMGs/ImovelArquivo-fd460ee5-221e-0ba6-06f1-3a1adaae61e4-FullHd.webp"
           alt="Gaia by SPL"
-          onerror="this.style.display = 'none'"
+          onerror="this.style.display='none'"
         />
       </div>
 
@@ -102,17 +65,13 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
             O lugar onde a vida brota, as raízes se firmam e os sonhos ganham
             forma. Na região da Av. Bruno Martini, Sinop/MT.
           </p>
-          <a href="#sobre" class="cta-sec" style="cursor: pointer"
-            >Conheça o projeto</a
-          >
+          <a href="#sobre" class="cta-sec" style="cursor:pointer;">Conheça o projeto</a>
         </div>
 
         <div class="hero-right">
           <div class="hero-form-box">
             <span class="hero-form-label">Cadastro de interesse</span>
-            <div class="hero-form-title">
-              Garanta sua unidade no <em>Gaia</em>
-            </div>
+            <div class="hero-form-title">Garanta sua unidade no <em>Gaia</em></div>
             <div class="hf-group">
               <label>Nome completo</label>
               <input type="text" id="h-nome" placeholder="Seu nome completo" />
@@ -136,18 +95,11 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                 <option>Morar e Investir</option>
               </select>
             </div>
-            <button
-              class="btn-hero-submit"
-              onclick="
-                gtag_report_conversion('https://gaia.toziimoveis.com.br/');
-                submitHeroForm();
-              "
-            >
+            <button class="btn-hero-submit" onclick="submitHeroForm()">
               Quero garantir minha unidade →
             </button>
             <p class="hero-form-aviso">
-              Seus dados são utilizados apenas para contato sobre o
-              empreendimento.
+              Seus dados são utilizados apenas para contato sobre o empreendimento.
             </p>
           </div>
         </div>
@@ -220,9 +172,7 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
           <span class="pill">Portaria 24h</span>
           <span class="pill">Lançamento 2025</span>
         </div>
-        <button class="sec-cta" onclick="openModal('sobre')">
-          Quero saber mais →
-        </button>
+        <button class="sec-cta" onclick="openModal('sobre')">Quero saber mais →</button>
       </div>
     </section>
 
@@ -290,13 +240,7 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
             </div>
           </li>
         </ul>
-        <button
-          class="sec-cta"
-          onclick="openModal('localizacao')"
-          style="margin-top: 32px"
-        >
-          Garantir minha unidade →
-        </button>
+        <button class="sec-cta" onclick="openModal('localizacao')" style="margin-top:32px;">Garantir minha unidade →</button>
       </div>
       <div class="loc-map">
         <iframe
@@ -383,10 +327,8 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
           </div>
         </div>
       </div>
-      <div style="margin-top: 48px; text-align: center">
-        <button class="sec-cta" onclick="openModal('tipologias')">
-          Quero conhecer as plantas →
-        </button>
+      <div style="margin-top:48px;text-align:center;">
+        <button class="sec-cta" onclick="openModal('tipologias')">Quero conhecer as plantas →</button>
       </div>
     </section>
 
@@ -461,10 +403,8 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
           </div>
         </div>
       </div>
-      <div style="margin-top: 48px; text-align: center">
-        <button class="sec-cta sec-cta-inv" onclick="openModal('diferenciais')">
-          Quero garantir minha unidade →
-        </button>
+      <div style="margin-top:48px;text-align:center;">
+        <button class="sec-cta sec-cta-inv" onclick="openModal('diferenciais')">Quero garantir minha unidade →</button>
       </div>
     </section>
 
@@ -583,14 +523,8 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
           </div>
         </div>
       </div>
-      <div style="margin-top: 48px; text-align: center">
-        <button
-          class="sec-cta"
-          onclick="openModal('lazer')"
-          style="background: var(--verde-escuro)"
-        >
-          Quero saber mais sobre o lazer →
-        </button>
+      <div style="margin-top:48px;text-align:center;">
+        <button class="sec-cta" onclick="openModal('lazer')" style="background:var(--verde-escuro);">Quero saber mais sobre o lazer →</button>
       </div>
     </section>
 
@@ -674,10 +608,8 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
           </div>
         </div>
       </div>
-      <div style="margin-top: 48px; text-align: center">
-        <button class="sec-cta" onclick="openModal('torres')">
-          Quero garantir minha unidade →
-        </button>
+      <div style="margin-top:48px;text-align:center;">
+        <button class="sec-cta" onclick="openModal('torres')">Quero garantir minha unidade →</button>
       </div>
     </section>
 
@@ -708,13 +640,7 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
         Sinal de 5% e entrada parcelada · Parcelas a partir de R$ 2.500 +
         Reforços
       </p>
-      <button
-        class="cta-main"
-        onclick="openModal('strip')"
-        style="cursor: pointer"
-      >
-        Quero garantir minha unidade →
-      </button>
+      <button class="cta-main" onclick="openModal('strip')" style="cursor:pointer;">Quero garantir minha unidade →</button>
     </div>
 
     <!-- FORMULÁRIO -->
@@ -771,13 +697,7 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
             <option>Morar e Investir</option>
           </select>
         </div>
-        <button
-          class="btn-submit"
-          onclick="
-            gtag_report_conversion('https://gaia.toziimoveis.com.br/');
-            submitMainForm();
-          "
-        >
+        <button class="btn-submit" onclick="submitMainForm()">
           Enviar cadastro →
         </button>
         <p class="form-aviso">
@@ -825,31 +745,20 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
           reservados.
         </p>
         <p>
-          <a
-            href="pages/privacidade.html"
-            style="color: rgba(232, 221, 204, 0.4); text-decoration: none"
-            >Política de Privacidade</a
-          >
+          <a href="pages/privacidade.html" style="color:rgba(232,221,204,0.4);text-decoration:none;">Política de Privacidade</a>
           &nbsp;·&nbsp;
-          <a
-            href="pages/sobre.html"
-            style="color: rgba(232, 221, 204, 0.4); text-decoration: none"
-            >Sobre a Tozi</a
-          >
+          <a href="pages/sobre.html" style="color:rgba(232,221,204,0.4);text-decoration:none;">Sobre a Tozi</a>
         </p>
         <p>Imagens ilustrativas. Consulte memorial descritivo. CRECI/MT.</p>
       </div>
     </footer>
 
+
     <!-- TOAST -->
     <div id="toast">Cadastro realizado! Entraremos em contato em breve.</div>
 
     <!-- MODAL POPUP FORM -->
-    <div
-      class="modal-overlay"
-      id="modal-overlay"
-      onclick="closeModalOutside(event)"
-    >
+    <div class="modal-overlay" id="modal-overlay" onclick="closeModalOutside(event)">
       <div class="modal-box">
         <button class="modal-close" onclick="closeModal()">✕</button>
         <span class="modal-label">Cadastro de interesse</span>
@@ -877,22 +786,13 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
             <option>Morar e Investir</option>
           </select>
         </div>
-        <button
-          class="btn-modal-submit"
-          onclick="
-            gtag_report_conversion('https://gaia.toziimoveis.com.br/');
-            submitModalForm();
-          "
-        >
-          Enviar cadastro →
-        </button>
-        <p class="modal-aviso">
-          Seus dados são utilizados apenas para contato sobre o empreendimento.
-        </p>
+        <button class="btn-modal-submit" onclick="submitModalForm()">Enviar cadastro →</button>
+        <p class="modal-aviso">Seus dados são utilizados apenas para contato sobre o empreendimento.</p>
       </div>
     </div>
 
     <script src="js/main.js"></script>
     <script src="js/cookies.js"></script>
+
   </body>
 </html>
